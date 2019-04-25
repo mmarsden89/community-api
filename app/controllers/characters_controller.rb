@@ -1,5 +1,5 @@
-class CharactersController < ApplicationController
-  before_action :set_character, only: [:show, :update, :destroy]
+class CharactersController < OpenReadController
+  before_action :set_character, only: [:destroy]
 
   # GET /characters
   def index
@@ -10,12 +10,12 @@ class CharactersController < ApplicationController
 
   # GET /characters/1
   def show
-    render json: @character
+    render json: Character.find(params[:id])
   end
 
   # POST /characters
   def create
-    @character = Character.new(character_params)
+    @character = current_user.characters.new(character_params)
 
     if @character.save
       render json: @character, status: :created, location: @character
@@ -26,6 +26,8 @@ class CharactersController < ApplicationController
 
   # PATCH/PUT /characters/1
   def update
+    set_character
+
     if @character.update(character_params)
       render json: @character
     else
@@ -41,11 +43,13 @@ class CharactersController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_character
-      @character = Character.find(params[:id])
+      puts "======================================================"
+      puts current_user.characters
+      @character = current_user.characters.find(params[:id])
     end
 
     # Only allow a trusted parameter "white list" through.
     def character_params
-      params.require(:character).permit(:user_id, :user_name, :x, :y, :direction, :moving, :active)
+      params.require(:character).permit(:user_id, :user_name, :x, :y, :direction, :moving, :active, :spritesheet)
     end
 end
