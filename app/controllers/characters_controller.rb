@@ -43,8 +43,6 @@ class CharactersController < OpenReadController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_character
-      puts "======================================================"
-      puts current_user.characters
       @character = current_user.characters.find(params[:id])
     end
 

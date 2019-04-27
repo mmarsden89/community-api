@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 Rails.application.routes.draw do
+  resources :messages
   resources :characters
   resources :items
   # RESTful routes
