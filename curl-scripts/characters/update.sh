@@ -1,11 +1,11 @@
-curl http://localhost:4741/members/1 \
+curl "http://localhost:4741/characters/${ID}" \
   --request PATCH \
   --include \
   --header 'Content-Type: application/json' \
+  --header "Authorization: Token token="${TOKEN}"" \
   --data '
     {
-    "member": {
-      "id": "'"${ID}"'",
+    "character": {
       "user_name": "'"${NAME}"'",
       "x": "'"${X}"'",
       "y": "'"${Y}"'",
