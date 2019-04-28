@@ -1,4 +1,4 @@
-class MessagesController < OpenReadController
+class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :update, :destroy]
 
   # GET /messages
@@ -46,6 +46,6 @@ class MessagesController < OpenReadController
 
     # Only allow a trusted parameter "white list" through.
     def message_params
-      params.require(:message).permit(:user_id, :text, :user_name)
+      params.require(:message).permit(:user_id, :user_name, :text)
     end
 end

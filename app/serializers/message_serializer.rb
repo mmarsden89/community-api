@@ -1,7 +1,3 @@
 class MessageSerializer < ActiveModel::Serializer
-  attributes :id, :user_id, :text, :user_name
-
-  def editable
-    scope == object.user
-  end
+  attributes :id, :user_id, :user_name, :text
 end
