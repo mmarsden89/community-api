@@ -1,5 +1,5 @@
-class MessagesController < ApplicationController
-  before_action :set_message, only: [:show, :update, :destroy]
+class MessagesController < OpenReadController
+  before_action :set_message, only: [:destroy]
 
   # GET /messages
   def index
@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
 
   # GET /messages/1
   def show
-    render json: @message
+    render json: Message.find(params[:id])
   end
 
   # POST /messages
@@ -46,6 +46,6 @@ class MessagesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
     def message_params
-      params.require(:message).permit(:user_id, :user_name, :text)
+      params.require(:message).permit(:user_id, :user_name, :text, :created_at)
     end
 end
