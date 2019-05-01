@@ -1,4 +1,4 @@
-# Community Front End
+# Community Back End
 Throughout my time at General Assembly’s software engineer immersive, one of the things that I often come back to is how much I enjoy the collaborative atmosphere and community of the campus. I wanted to pay homage to that for my full-stack project by building Community.  In Community, you can meet up virtually with friends or strangers to discuss anything you want to. Whether that be programming related or talking about last night’s game.
 
 The backend of this project provided a challenge in that I really had to plan out the information I would need from my API ahead of time if I wanted to avoid rolling back any migrations. This however, became a great lesson in database management as I was able to make changes/updates by the end of the projec without worrying about an unknown impact.
