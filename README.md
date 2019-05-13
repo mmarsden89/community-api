@@ -23,7 +23,7 @@ Planning started by creating my wireframe and ERD to establish my goal. Breaking
 
 Some things that I would really like to implement would be player collision detection. I had white-boarded the logic but didn’t have time to add the functionality. Another feature would be NPC(non-playable-characters) to interact with.  Community was a two birds with one stone project. I’d like to stay consistent with updates to it as it started as a personal project that I was able to implement into a project. I can imagine it being a much larger scale game that I can periodically add further substance to but for the sake of meeting requirements think I excelled in creating a basic game engine that I can add to.  
 
-## Wireframe
+## ERD
 
 ![Community ERD](https://i.imgur.com/SSJtgtu.png)
 
